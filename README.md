@@ -1,0 +1,2 @@
+# selinux
+Disable SELinux
