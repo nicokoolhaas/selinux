@@ -8,8 +8,8 @@
  - block:
    - name: zet selinux op disabled
      selinux: state=disabled
-   - name: reboot
-     at: count=1 units=minutes command="/sbin/shutdown -r now"
-   - name: wacht tot host weer terug is
-     local_action: wait_for host={{ inventory_hostname }} delay=120 port=22 search_regex=OpenSSH timeout=300
+#   - name: reboot
+#     at: count=1 units=minutes command="/sbin/shutdown -r now"
+#   - name: wacht tot host weer terug is
+#     local_action: wait_for host={{ inventory_hostname }} delay=120 port=22 search_regex=OpenSSH timeout=300
    when: sestatus.stdout!="Disabled"
